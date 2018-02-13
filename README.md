@@ -1,2 +1,2 @@
 # meteo
-contient le code Android et le code Server-side
+contient le code Server-side
