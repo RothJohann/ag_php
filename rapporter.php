@@ -9,16 +9,16 @@
 		 die('Erreur : '.$e->getMessage());
  }
  
- // On ajoute une entrée dans la table jeux_video
+ // On ajoute une entrée dans la table rapportsgivre
  $bdd->exec('INSERT INTO rapportsgivre (DateRapport, Givre) VALUES (CURRENT_TIMESTAMP, 1)');
  
 
     $tab = array();
 	
 	
-	//
 	
-    $tab[0] = array("msg" => 'le rapport a bien été inséré dans la base de données');
+	
+    $tab[0] = array("msg" => 'le rapport a bien ete insere dans la base de donnees');
 
     print(json_encode($tab));
 
