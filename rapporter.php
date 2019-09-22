@@ -1,5 +1,6 @@
 <?php
 
+header( 'content-type: text/html; charset=UTF-8' );
  try
  {
 	 $bdd = new PDO('mysql:host=localhost;dbname=meteo;charset=utf8', 'root', '');
@@ -18,7 +19,7 @@
 	
 	
 	
-    $tab[0] = array("msg" => 'le rapport a bien ete insere dans la base de donnees');
+    $tab[0] = array("msg" => 'Le rapport a bien été inseré dans la base de données!');
 
     print(json_encode($tab));
 
