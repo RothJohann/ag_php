@@ -21,7 +21,7 @@ header( 'content-type: text/html; charset=UTF-8' );
 	
     $tab[0] = array("msg" => utf8_encode('Le rapport a bien été inseré dans la base de données!'));
 
-    print(json_encode($tab,));
+    print(json_encode($tab));
 
     
 ?>
