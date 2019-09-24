@@ -1,6 +1,7 @@
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 <?php
 
-header( 'content-type: text/html; charset=UTF-8' );
+
  try
  {
 	 $bdd = new PDO('mysql:host=localhost;dbname=meteo;charset=utf8', 'root', '');
