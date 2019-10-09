@@ -12,7 +12,8 @@
  }
  
  // On ajoute une entrée dans la table rapportsgivre
- $resultat = $bdd->exec('INSERT INTO rapportsgivre (DateRapport, Givre) VALUES (CURRENT_TIMESTAMP, 1)');
+ $resultat = 0
+ $bdd->exec('INSERT INTO rapportsgivre (DateRapport, Givre) VALUES (CURRENT_TIMESTAMP, 1)');
  $resultat = 1;
 
     $tab = array();
