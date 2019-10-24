@@ -1,6 +1,6 @@
 <?php
  
-    //Récupération des données  
+    //Récupération des données  19/09/2019    9/09/19
     $tab = array();
 	
 	$date = date("d/m/Y");
@@ -17,8 +17,9 @@
 	$heure = date("H:i");
 	//Print("Nous sommes le $date et il est $heure");
 	
+	
 	$fichiermeteo = fopen('C:\WeatherLink\ADRETS\Downld08.txt', 'r');
-	$ligne = fgets($fichiermeteo);
+	
 	do  //recherche de la 1ère ligne avec la date du jour
 	{
 	$ligne = fgets($fichiermeteo);

@@ -1,5 +1,26 @@
 <?php
 
+	
+$date = date("d/m/Y");
+$time = date("H:i");
+
+    do  //recherche de la 1ère ligne avec la date du jour
+	{
+	$ligne = fgets($fichiermeteo);
+	}	
+	while (trim(substr($ligne,0,10)) != $date and $ligne != null);
+	
+	do  //recherche de la 1ère ligne avec l'heure actuelle
+	{
+	$ligne = fgets($fichiermeteo);
+	}	
+	while (trim(substr($ligne,8,7)) != $time and $ligne != null);
+	
+	
+$temp = substr($ligne,18,4);
+$hum = substr($ligne,40,2);
+	
+	
 
  try
  {
@@ -11,7 +32,7 @@
  }
  
  // On ajoute une entrée dans la table rapportsgivre
- $resultat = $bdd->exec('INSERT INTO rapportsgivre (DateRapport, Givre, Temperature, Humidity) VALUES (CURRENT_TIMESTAMP, 1, 0, 0)');
+ $resultat = $bdd->exec('INSERT INTO rapportsgivre (DateRapport, Givre, Temperature, Humidity) VALUES (CURRENT_TIMESTAMP, 1, $temp, $hum)');
  
 
     $tab = array();	
@@ -19,9 +40,10 @@
 	
     $tab[0] = array("msg" => utf8_encode('Le rapport a bien été inseré dans la base de données!'));
 
-    //print(json_encode($tab));
 
 	print $resultat;
+	print ("il fait $temp degrés et il y a $hum % d'humidité");
+	
 
     
 ?>
