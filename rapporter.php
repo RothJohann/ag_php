@@ -1,8 +1,10 @@
 <?php
 date_default_timezone_set('Europe/Paris');
+
 $interval = new DateInterval('P5M');
-$date = date("d/m/Y");
+$date = new DateTime("d/m/Y");
 date_sub($date, $interval);
+
 if(substr($date,0,1)=="0")
 	
 	$date = substr($date,1,5) . substr($date,8,2);
