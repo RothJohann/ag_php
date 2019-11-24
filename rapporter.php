@@ -6,6 +6,7 @@ $date = new DateTime();
 date_sub($date, $interval);
 $date = date_format($date, 'd/m/Y');
 
+ print "$date=".$date." ";
 
 if(substr($date,0,1)=="0")
 	
