@@ -1,9 +1,9 @@
 <?php
-
-	
 $date = date("d/m/Y");
 $time = date("H:i");
+$fichiermeteo = fopen('C:\WeatherLink\ADRETS\Downld08.txt', 'r');
 
+    $ligne = fgets($fichiermeteo);
     do  //recherche de la 1ère ligne avec la date du jour
 	{
 	$ligne = fgets($fichiermeteo);
@@ -19,7 +19,6 @@ $time = date("H:i");
 	
 $temp = substr($ligne,18,4);
 $hum = substr($ligne,40,2);
-	
 	
 
  try
@@ -39,11 +38,6 @@ $hum = substr($ligne,40,2);
 	
 	
     $tab[0] = array("msg" => utf8_encode('Le rapport a bien été inseré dans la base de données!'));
-
-
-	print $resultat;
-	print ("il fait $temp degrés et il y a $hum % d'humidité");
-	
-
-    
+	$temp = 3;
+	print ($temp);	
 ?>
