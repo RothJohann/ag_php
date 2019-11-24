@@ -15,7 +15,7 @@ if(substr($date,0,1)=="0")
 	
 else
 	
-	$date = substr($date,0,5) . substr($date,8,2);
+	$date = substr($date,0,6) . substr($date,8,2);
 	
 
 $time = new DateTime();
