@@ -1,6 +1,6 @@
 <?php
 date_default_timezone_set('Europe/Paris');
-
+$compteur = 0;
 $interval = new DateInterval('PT5M');
 $date = new DateTime();
 date_sub($date, $interval);
@@ -31,14 +31,19 @@ $ligne = fgets($fichiermeteo);
 
 do  //recherche de la 1ère ligne avec la date du jour
 {
-	//print(trim(substr($ligne,0,10)));
-	//print($date); 
+	$compteur++;
+	print("string avec laquelle on cherche à comparer la date:".trim(substr($ligne,0,10)));
+	print("et ca cest la date:".$date); 
 	$ligne = fgets($fichiermeteo);
 }	
 while (trim(substr($ligne,0,10)) != $date and $ligne != null);
 
+
 do  //recherche de la 1ère ligne avec l'heure actuelle
 {
+	$compteur++;
+	print("string avec laquelle on cherche à comparer lheure:".trim(substr($ligne,8,7)));
+	print("et ca cest lheure:".$time); 
 	$ligne = fgets($fichiermeteo);
 }	
 while (trim(substr($ligne,8,7)) != $time and $ligne != null);
@@ -48,8 +53,6 @@ $temp = substr($ligne,18,4);
 $hum = substr($ligne,40,2);
 
 
-
-	
 
  try
  {
