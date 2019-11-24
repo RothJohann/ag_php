@@ -1,7 +1,7 @@
 <?php
 date_default_timezone_set('Europe/Paris');
 
-$interval = new DateInterval('PT5i');
+$interval = new DateInterval('PT5M');
 $date = new DateTime();
 date_sub($date, $interval);
 $date = date_format($date, 'd/m/Y');
