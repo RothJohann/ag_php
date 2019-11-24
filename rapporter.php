@@ -1,16 +1,17 @@
 <?php
 date_default_timezone_set('Europe/Paris');
-
+$interval = new DateInterval('P5M');
 $date = date("d/m/Y");
-
+$date->sub($interval);
 if(substr($date,0,1)=="0")
 	
 	$date = substr($date,1,5) . substr($date,8,2);
 	
+	
 else
 	
 	$date = substr($date,0,5) . substr($date,8,2);
-
+	
 
 
 $time = date("H:i");
