@@ -6,7 +6,7 @@ $date = new DateTime();
 date_sub($date, $interval);
 $date = date_format($date, 'd/m/Y');
 
- print "$date=".$date." ";
+ print "date=".$date." ";
 
 if(substr($date,0,1)=="0")
 	
@@ -18,8 +18,11 @@ else
 	$date = substr($date,0,5) . substr($date,8,2);
 	
 
+$time = new DateTime();
+date_sub($time, $interval);
+$time = date_format($time, 'H:i');
 
-$time = date("H:i");
+print "time diminue de 5 min=".$time." ";
 
 $fichiermeteo = fopen('C:\WeatherLink\ADRETS\Downld08.txt', 'r');
 
